@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../button/Button'
 
 import './Content.css'
 
@@ -13,7 +14,12 @@ const Content = () => {
                                 <i className="fas fa-check-circle"></i> <span className='password-content'>An example success alert with an icon</span>
                             </div>
                             <div>
-                                <i className="fas fa-sync"></i> <i className="fas fa-copy"></i>
+                                <Button 
+                                    className='btn btn-sm btn-success' 
+                                    iconClass='fas fa-sync'/>
+                                <Button 
+                                    className='btn btn-sm btn-success' 
+                                    iconClass='fas fa-copy'/>
                             </div>
                         </div>
                         <div className="alert alert-warning d-flex justify-content-between" role="alert">
@@ -21,7 +27,12 @@ const Content = () => {
                                 <i class="fas fa-exclamation-triangle"></i> <span className='password-content'>An example success alert with an icon</span>
                             </div>
                             <div>
-                                <i className="fas fa-sync"></i> <i className="fas fa-copy"></i>
+                                <Button 
+                                    className='btn btn-sm btn-warning' 
+                                    iconClass='fas fa-sync'/>
+                                <Button 
+                                    className='btn btn-sm btn-warning' 
+                                    iconClass='fas fa-copy'/>
                             </div>
                         </div>
                         <div className="alert alert-danger d-flex justify-content-between" role="alert">
@@ -29,7 +40,12 @@ const Content = () => {
                                 <i class="fas fa-times-circle"></i> <span className='password-content'>An example success alert with an icon</span>
                             </div>
                             <div>
-                                <i className="fas fa-sync"></i> <i className="fas fa-copy"></i>
+                            <Button 
+                                    className='btn btn-sm btn-danger' 
+                                    iconClass='fas fa-sync'/>
+                                <Button 
+                                    className='btn btn-sm btn-danger' 
+                                    iconClass='fas fa-copy'/>
                             </div>
                         </div>
 
