@@ -1,9 +1,14 @@
 import React from 'react'
 import Button from '../button/Button'
+import Slider from '../slider/Slider'
 
 import './Content.css'
 
 const Content = () => {
+    const onChangeSlider = (e) => {
+        console.log(e.target.value)
+    }
+
     return (
         <div className='row'>
             <div className="col-md-12">
@@ -24,7 +29,7 @@ const Content = () => {
                         </div>
                         <div className="alert alert-warning d-flex justify-content-between" role="alert">
                             <div>
-                                <i class="fas fa-exclamation-triangle"></i> <span className='password-content'>An example success alert with an icon</span>
+                                <i className="fas fa-exclamation-triangle"></i> <span className='password-content'>An example success alert with an icon</span>
                             </div>
                             <div>
                                 <Button 
@@ -37,7 +42,7 @@ const Content = () => {
                         </div>
                         <div className="alert alert-danger d-flex justify-content-between" role="alert">
                             <div>
-                                <i class="fas fa-times-circle"></i> <span className='password-content'>An example success alert with an icon</span>
+                                <i className="fas fa-times-circle"></i> <span className='password-content'>An example success alert with an icon</span>
                             </div>
                             <div>
                             <Button 
@@ -50,10 +55,14 @@ const Content = () => {
                         </div>
 
                         <form className="row gx-3 gy-2 align-items-center">
-                            <div>
-                                <label for="customRange2" class="form-label">Example range</label>
-                                <input type="range" className="form-range" id='range-input'/>
-                                <output></output>
+                            <div className='row'>
+                                <Slider 
+                                    min={1}
+                                    max={60}
+                                    step={1}
+                                    value={10}
+                                    defaultlength={10}
+                                    onChangeValue={onChangeSlider}/>
                             </div>
                             <div className="col">
                                 <div className="form-check">
