@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 const Slider = (props) => {
-    const { step, min, max, value, defaultlength, onChangeValue } = props
+    const { step, min, max, value, defaultlength, changevalue } = props
 
     const handleChange = (max) => (e) => {
-        onChangeValue(e)
+        changevalue(e)
     }
 
     return (
@@ -23,7 +23,7 @@ const Slider = (props) => {
                     id='range-input'/>
             </div>
             <div className="col-1 text-center">
-                <span className='badge bg-secondary'>10</span>
+                <span className='badge bg-primary'>{value}</span>
             </div>
         </>
     );
@@ -35,7 +35,7 @@ Slider.propTypes = {
     max: PropTypes.number.isRequired,
     value: PropTypes.number.isRequired,
     defaultlength: PropTypes.number.isRequired,
-    onChangeValue: PropTypes.func.isRequired,
+    changevalue: PropTypes.func.isRequired,
 }
 
 export default Slider;

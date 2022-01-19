@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../button/Button'
 import Slider from '../slider/Slider'
 
 import './Content.css'
 
 const Content = () => {
+    const [rangeValue, setRangeValue] = useState(10);
+
     const onChangeSlider = (e) => {
-        console.log(e.target.value)
+        setRangeValue(e.target.value)
     }
 
     return (
@@ -27,32 +29,6 @@ const Content = () => {
                                     iconClass='fas fa-copy'/>
                             </div>
                         </div>
-                        <div className="alert alert-warning d-flex justify-content-between" role="alert">
-                            <div>
-                                <i className="fas fa-exclamation-triangle"></i> <span className='password-content'>An example success alert with an icon</span>
-                            </div>
-                            <div>
-                                <Button 
-                                    className='btn btn-sm btn-warning' 
-                                    iconClass='fas fa-sync'/>
-                                <Button 
-                                    className='btn btn-sm btn-warning' 
-                                    iconClass='fas fa-copy'/>
-                            </div>
-                        </div>
-                        <div className="alert alert-danger d-flex justify-content-between" role="alert">
-                            <div>
-                                <i className="fas fa-times-circle"></i> <span className='password-content'>An example success alert with an icon</span>
-                            </div>
-                            <div>
-                            <Button 
-                                    className='btn btn-sm btn-danger' 
-                                    iconClass='fas fa-sync'/>
-                                <Button 
-                                    className='btn btn-sm btn-danger' 
-                                    iconClass='fas fa-copy'/>
-                            </div>
-                        </div>
 
                         <form className="row gx-3 gy-2 align-items-center">
                             <div className='row'>
@@ -60,9 +36,9 @@ const Content = () => {
                                     min={1}
                                     max={60}
                                     step={1}
-                                    value={10}
-                                    defaultlength={10}
-                                    onChangeValue={onChangeSlider}/>
+                                    value={parseInt(rangeValue, 10)}
+                                    defaultlength={parseInt(rangeValue, 10)}
+                                    changevalue={onChangeSlider}/>
                             </div>
                             <div className="col">
                                 <div className="form-check">
