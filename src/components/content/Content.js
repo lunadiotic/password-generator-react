@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../button/Button'
+import Checkbox from '../checkbox/Checkbox'
 import Slider from '../slider/Slider'
 
 import './Content.css'
@@ -9,6 +10,9 @@ const Content = () => {
 
     const onChangeSlider = (e) => {
         setRangeValue(e.target.value)
+    }
+
+    const onChangeCheckbox = (e) => {
     }
 
     return (
@@ -41,52 +45,36 @@ const Content = () => {
                                     changevalue={onChangeSlider}/>
                             </div>
                             <div className="col">
-                                <div className="form-check">
-                                    <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id=""
-                                    />
-                                    <label className="form-check-label" htmlFor="autoSizingCheck2">
-                                        Remember me
-                                    </label>
-                                </div>
+                                <Checkbox 
+                                    label="Uppercase"
+                                    name="uppercase"
+                                    value={true}
+                                    checked={true}
+                                    onChange={onChangeCheckbox}/>
                             </div>
                             <div className="col">
-                                <div className="form-check">
-                                    <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id=""
-                                    />
-                                    <label className="form-check-label" htmlFor="autoSizingCheck2">
-                                        Remember me
-                                    </label>
-                                </div>
+                                <Checkbox 
+                                    label="Lowercase"
+                                    name="lowercase"
+                                    value={true}
+                                    checked={true}
+                                    onChange={onChangeCheckbox}/>
                             </div>
                             <div className="col">
-                                <div className="form-check">
-                                    <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id=""
-                                    />
-                                    <label className="form-check-label" htmlFor="autoSizingCheck2">
-                                        Remember me
-                                    </label>
-                                </div>
+                                <Checkbox 
+                                    label="Symbols"
+                                    name="symbols"
+                                    value={true}
+                                    checked={true}
+                                    onChange={onChangeCheckbox}/>
                             </div>
                             <div className="col">
-                                <div className="form-check">
-                                    <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        id=""
-                                    />
-                                    <label className="form-check-label" htmlFor="autoSizingCheck2">
-                                        Remember me
-                                    </label>
-                                </div>
+                                <Checkbox 
+                                    label="Numbers"
+                                    name="numbers"
+                                    value={true}
+                                    checked={true}
+                                    onChange={onChangeCheckbox}/>
                             </div>
                         </form>
                    </div>
