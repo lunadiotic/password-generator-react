@@ -5,6 +5,33 @@ import Slider from '../slider/Slider'
 
 import './Content.css'
 
+const CHECKBOX_LIST = [
+    {
+        id: 0,
+        label: 'Uppercase',
+        name: 'uppercase',
+        isChecked: true
+    },
+    {
+        id: 1,
+        label: 'Lowercase',
+        name: 'lowercase',
+        isChecked: true
+    },
+    {
+        id: 2,
+        label: 'Symbols',
+        name: 'symbols',
+        isChecked: true
+    },
+    {
+        id: 3,
+        label: 'Numbers',
+        name: 'numbers',
+        isChecked: true
+    },
+]
+
 const Content = () => {
     const [rangeValue, setRangeValue] = useState(10);
 
@@ -44,38 +71,17 @@ const Content = () => {
                                     defaultlength={parseInt(rangeValue, 10)}
                                     changevalue={onChangeSlider}/>
                             </div>
-                            <div className="col">
-                                <Checkbox 
-                                    label="Uppercase"
-                                    name="uppercase"
-                                    value={true}
-                                    checked={true}
-                                    onChange={onChangeCheckbox}/>
-                            </div>
-                            <div className="col">
-                                <Checkbox 
-                                    label="Lowercase"
-                                    name="lowercase"
-                                    value={true}
-                                    checked={true}
-                                    onChange={onChangeCheckbox}/>
-                            </div>
-                            <div className="col">
-                                <Checkbox 
-                                    label="Symbols"
-                                    name="symbols"
-                                    value={true}
-                                    checked={true}
-                                    onChange={onChangeCheckbox}/>
-                            </div>
-                            <div className="col">
-                                <Checkbox 
-                                    label="Numbers"
-                                    name="numbers"
-                                    value={true}
-                                    checked={true}
-                                    onChange={onChangeCheckbox}/>
-                            </div>
+                            {CHECKBOX_LIST.map((item) => (
+                                <div className="col">
+                                     <Checkbox 
+                                        key={item.id}
+                                        label={item.label}
+                                        name={item.name}
+                                        value={item.isChecked}
+                                        checked={item.isChecked}
+                                        onChange={onChangeCheckbox}/>
+                                 </div>
+                            ))}
                         </form>
                    </div>
                </div>
