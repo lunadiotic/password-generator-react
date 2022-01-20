@@ -34,12 +34,29 @@ const CHECKBOX_LIST = [
 
 const Content = () => {
     const [rangeValue, setRangeValue] = useState(10);
+    const [checkbox, setCheckbox] = useState({
+        uppercase: true,
+        lowercase: true,
+        symbols: true,
+        numbers: true
+    })
 
     const onChangeSlider = (e) => {
         setRangeValue(e.target.value)
     }
 
     const onChangeCheckbox = (e) => {
+        let { name, checked } = e.target
+        CHECKBOX_LIST.map(item => {
+            if(item.name === name) {
+                item.isChecked = checked
+                setCheckbox({
+                    [name]: item.isChecked
+                })
+            }
+            return ''
+        })
+        console.log(CHECKBOX_LIST)
     }
 
     return (
@@ -72,9 +89,8 @@ const Content = () => {
                                     changevalue={onChangeSlider}/>
                             </div>
                             {CHECKBOX_LIST.map((item) => (
-                                <div className="col">
+                                <div className="col" key={item.id}>
                                      <Checkbox 
-                                        key={item.id}
                                         label={item.label}
                                         name={item.name}
                                         value={item.isChecked}
